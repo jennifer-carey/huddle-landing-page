@@ -8,17 +8,33 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #fff;
     background: hsl(257, 40%, 49%);
+    background-image: url(../images/bg-mobile.svg);
+    background-repeat: no-repeat;
 }
 
 /*  Content Styles  */
 
-.container {
+header {
+    height: 125px;
+}
+
+.logo {
+    width: 120px;
+    position: relative;
+    top: 30px;
+    left: 40px;
+}
+
+.main-img {
+    width: 300px;
+    display: block;
     margin: 0 auto;
 }
 
 .content {
     padding: 2rem;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .content h1 {
@@ -41,20 +57,73 @@ button {
     background-color: #fff;
     border: none;
     border-radius: 50px;
-
 }
 
-
-
-/*  Attribution Styles set by Frontend Mentor  */
-
-.attribution { 
-    position: absolute;
-    bottom: 10px;
-    left: 50px;
-    font-size: 11px; 
-    text-align: center; 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
 }
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+
+.fab {
+    padding: 5px;
+}
+
+/* Media Query - 1440px Desktop */
+
+@media (min-width: 1440px) {
+    body {
+        background-image: url(../images/bg-desktop.svg);
+        background-repeat: cover;
+    }
+
+    header {
+        height: 200px;
+    }
+    
+    .logo {
+        width: 200px;
+        position: relative;
+        top: 50px;
+        left: 100px;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    .main-img {
+        width: 700px;
+    }
+    
+    .content {
+        width: 40%;
+        text-align: left;
+        padding-left: 3rem;
+        margin-bottom: 0;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    button {
+        padding: 12px 60px;
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        justify-content: flex-end;
+    }
+
+    .fab {
+        padding: 10px;
+    }
+
+    .fab:last-child {
+        padding-right: 70px;
+    }
 }

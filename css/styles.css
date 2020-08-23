@@ -10,12 +10,13 @@ body {
     background: hsl(257, 40%, 49%);
     background-image: url(../images/bg-mobile.svg);
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /*  Content Styles  */
 
 header {
-    height: 125px;
+    height: 8em;
 }
 
 .logo {
@@ -25,60 +26,68 @@ header {
     left: 40px;
 }
 
-.main-img {
-    width: 300px;
-    display: block;
+.img-container {
+    width: 70%;
     margin: 0 auto;
+}
+
+.main-img {
+    width: 100%;
 }
 
 .content {
     padding: 2rem;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 2em;
 }
 
 .content h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
-    line-height: 2.5rem;
+    line-height: 1.5;
 }
 
 .content p {
-    padding-bottom: .5rem;
+    padding-bottom: .5em;
     font-size: 1rem;
-    line-height: 1.7rem;
+    line-height: 1.7;
 }
 
 button {
-    padding: 12px 75px;
+    padding: 1em 4em;
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     color: hsl(257, 40%, 49%);
     background-color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 100px;
+    transition: all 300ms;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    padding-bottom: 40px;
+    padding-bottom: 4em;
+    transition: all 300ms;
+}
+
+button:hover,
+button:focus,
+.fab:hover,
+.fab:focus {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .fab {
-    padding: 5px;
+    padding: .25em;
 }
 
-/* Media Query - 1440px Desktop */
+/* Media Queries */
 
-@media (min-width: 1440px) {
-    body {
-        background-image: url(../images/bg-desktop.svg);
-        background-repeat: cover;
-    }
-
+@media (min-width: 900px) {
     header {
-        height: 200px;
+        height: 12em;
     }
     
     .logo {
@@ -88,31 +97,49 @@ button {
         left: 100px;
     }
 
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        background-image: url(../images/bg-desktop.svg);
+        background-size: contain;
+    }
+
+    /* header {
+        height: 12em;
+    }
+    
+    .logo {
+        width: 200px;
+        position: relative;
+        top: 50px;
+        left: 100px;
+    } */
+
     main {
         display: flex;
         justify-content: center;
-        padding-bottom: 30px;
+        padding-bottom: 2em;
     }
 
-    .main-img {
-        width: 700px;
+    .img-container {
+        width: 55%;
+        max-width: 700px;
+        margin: 0;
     }
     
     .content {
         width: 40%;
         text-align: left;
-        padding-left: 3rem;
+        padding-left: 3em;
         margin-bottom: 0;
-    }
-
-    .content h1 {
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-
-    button {
-        padding: 12px 60px;
-        font-size: 1rem;
     }
 
     .social-icons {
@@ -120,10 +147,10 @@ button {
     }
 
     .fab {
-        padding: 10px;
+        padding: .5em;
     }
 
     .fab:last-child {
-        padding-right: 70px;
+        margin-right: 5em;
     }
 }
